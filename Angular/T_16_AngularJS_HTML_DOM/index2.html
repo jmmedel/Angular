@@ -1,0 +1,42 @@
+
+
+
+<!-- 
+
+    Application explained:
+
+The ng-disabled directive binds the application data mySwitch to the HTML button's disabled attribute.
+
+The ng-model directive binds the value of the HTML checkbox element to the value of mySwitch.
+
+If the value of mySwitch evaluates to true, the button will be disabled:
+
+<p>
+<button disabled>Click Me!</button>
+</p>
+If the value of mySwitch evaluates to false, the button will not be disabled: 
+
+<p>
+<button>Click Me!</button>
+</p>
+The ng-show Directive
+The ng-show directive shows or hides an HTML element.
+
+-->
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="">
+
+<p ng-show="true">I am visible.</p>
+
+<p ng-show="false">I am not visible.</p>
+
+</div> 
+
+</body>
+</html>
+
