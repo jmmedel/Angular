@@ -3,18 +3,17 @@
 
 <!-- 
 
-AngularJS Animations
+  What do I Need?
+To make your applications ready for animations, you must include the AngularJS Animate library:
 
-AngularJS provides animated transitions, with help from CSS.
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
 
-What is an Animation?
-An animation is when the transformation of an HTML element gives you an illusion of motion.
+Then you must refer to the ngAnimate module in your application:
 
-Example:
-Check the checkbox to hide the DIV:
+<body ng-app="ngAnimate">
+Or if your application has a name, add ngAnimate as a dependency in your application module:  
 
 -->
-
 <!DOCTYPE html>
 <html>
 <style>
@@ -40,17 +39,15 @@ div {
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
 
-<body ng-app="ngAnimate">
+<body ng-app="myApp">
 
 <h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
 
 <div ng-hide="myCheck"></div>
 
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+</script>
+
 </body>
-</html>
-
-<!--
-
-    Applications should not be filled with animations, but some animations can make the application easier to understand.
-    
--->
+</html
