@@ -1,0 +1,41 @@
+
+
+
+<!-- 
+
+    Include AngularJS Code
+The HTML files you include with the ng-include directive, can also contain AngularJS code:
+
+myTable.htm:
+<table>
+<tr ng-repeat="x in names">
+<td>{{ x.Name }}</td>
+<td>{{ x.Country }}</td>
+</tr>
+</table>
+Include the file "myTable.htm" in your web page, and all AngularJS code will be executed, even the code inside the included file:
+
+-->
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+  <div ng-include="'myTable.htm'"></div>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("customers.php").then(function (response) {
+        $scope.names = response.data.records;
+    });
+});
+</script>
+
+<p>The HTML, and AngularJS code, for this table are located in the file "myTable.htm".</p>
+
+</body>
+</html>
